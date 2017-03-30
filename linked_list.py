@@ -62,4 +62,37 @@ class Solution(object):
         :rtype: bool
         """
 
-        
+        # Traverse half of the list reversing it. Match the second half
+        slow = head
+        fast = head
+        prev = None
+        while fast and fast.next:
+            fast = fast.next.next
+            slow.next = prev
+            prev = slow
+            slow = slow.next
+        if fast:
+            slow = slow.next
+
+        while rev and rev.val == slow.val:
+            slow = slow.next
+            rev = rev.next
+        return not rev
+
+# Delete in place
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution(object):
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+
+        node.val = node.next.val
+        node.next = node.next.next
