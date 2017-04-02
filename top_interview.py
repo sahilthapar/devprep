@@ -124,4 +124,25 @@ class Solution(object):
             seen.add(n)
             n = sum([int(c) ** 2 for c in str(n)])
         return True
-        
+
+# FizzBuzz
+
+class Solution(object):
+    def toPrint(self, i):
+        mul_3 = ((i % 3) == 0)
+        mul_5 = ((i % 5) == 0)
+        mul_both = mul_3 and mul_5
+        if mul_both:
+            return "FizzBuzz"
+        if mul_3:
+            return "Fizz"
+        if mul_5:
+            return "Buzz"
+        return str(i)
+
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        return map(self.toPrint, range(1, n+1))
