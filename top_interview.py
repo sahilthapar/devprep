@@ -97,3 +97,15 @@ class Solution(object):
         :rtype: int
         """
         return sorted(nums)[len(nums)/2]
+
+# Find duplicates
+
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return not(len(collections.Counter(nums)) == len(nums))
+
+        
