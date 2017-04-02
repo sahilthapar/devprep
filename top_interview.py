@@ -88,3 +88,12 @@ class MinStack(object):
             return None
         else:
             return self.stack[-1][1]
+
+# Majority element
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return sorted(nums)[len(nums)/2]
