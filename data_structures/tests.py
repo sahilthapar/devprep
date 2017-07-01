@@ -1,7 +1,7 @@
 import unittest
 from linked_list import LinkedList
 from stack import StackArray, StackLinkedList
-from queue import QueueArray
+from queue import QueueArray, QueueLinkedList
 
 class Test(unittest.TestCase):
 
@@ -51,3 +51,16 @@ class Test(unittest.TestCase):
 
     self.assertEqual(self.queue_array.toArray(), [3, 2])
     self.assertEqual(self.queue_array.peek(), 3)
+
+  def test_queue_list(self):
+    self.queue_list = QueueLinkedList()
+    self.queue_list.enqueue(1)
+    self.queue_list.enqueue(2)
+    self.queue_list.enqueue(3)
+    print self.queue_list.toArray()
+    self.queue_list.dequeue()
+    self.queue_list.dequeue()
+    self.queue_list.enqueue(2)
+
+    self.assertEqual(self.queue_list.toArray(), [3, 2])
+    self.assertEqual(self.queue_list.peek(), 3)
