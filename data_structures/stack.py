@@ -36,7 +36,7 @@ class StackArray():
     Checks if stack is empty
     :return: bool
     """
-    return len(self.lst) == 0
+    return not self.lst
 
   def toArray(self):
     """
