@@ -1,6 +1,6 @@
 import unittest
 from linked_list import LinkedList
-from stack import StackArray
+from stack import StackArray, StackLinkedList
 
 class Test(unittest.TestCase):
 
@@ -26,3 +26,15 @@ class Test(unittest.TestCase):
 
     self.assertEqual(self.stack_array.toArray(), [2, 1])
     self.assertEqual(self.stack_array.peek(), 2)
+
+  def test_stack_list(self):
+    self.stack_list = StackLinkedList()
+    self.stack_list.push(1)
+    self.stack_list.push(2)
+    self.stack_list.push(3)
+    self.stack_list.pop()
+    self.stack_list.pop()
+    self.stack_list.push(2)
+
+    self.assertEqual(self.stack_list.toArray(), [2, 1])
+    self.assertEqual(self.stack_list.peek(), 2)
