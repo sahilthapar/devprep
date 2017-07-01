@@ -44,3 +44,54 @@ def merge(left, right):
     else:
       res.append(right.pop(0))
   return res + left + right
+
+
+def quick_sort(nums, left=None, right=None):
+  """
+  Sorts a list on numbers using quick sort
+  :param nums: 
+  :param left: 
+  :param right: 
+  :return: list
+  """
+  left = 0 if left is None else left
+  right = len(nums) - 1 if right is None else right
+  if left >= right:
+    return nums
+  pivot = nums[left + (right-left)/2]
+  idx = partition(nums, left, right, pivot)
+  quick_sort(nums, left, idx - 1)
+  quick_sort(nums, idx, right)
+  return nums
+
+
+def partition(nums, left, right, pivot):
+  """
+  Helper function for quick sort; Partitions the numbers so that all numbers
+  smaller than partition are on the left and greater on the right 
+  :param nums: 
+  :param left: 
+  :param right: 
+  :param pivot: 
+  :return: int index
+  """
+  while left <= right:
+    while nums[left] < pivot:
+      left += 1
+    while nums[right] > pivot:
+      right -= 1
+    if left <= right:
+      tmp = nums[left]
+      nums[left] = nums[right]
+      nums[right] = tmp
+      left += 1
+      right -= 1
+  return left
+
+
+
+
+
+
+
+

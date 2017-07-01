@@ -3,7 +3,7 @@ from recursion import fib_rec, fib_memo
 from misc import reverse, largest_number, check_cycle, bin_search
 from data_structures.node import Node
 from data_structures.linked_list import LinkedList
-from sorting import bubble_sort, merge_sort
+from sorting import bubble_sort, merge_sort, quick_sort
 
 class Test(unittest.TestCase):
 
@@ -89,5 +89,14 @@ class Test(unittest.TestCase):
     self.assertEqual(merge_sort(nums), sorted_nums)
     self.assertEqual(merge_sort([]), [])
     self.assertEqual(merge_sort([0]), [0])
+
+  def test_quick_sort(self):
+
+    nums = [1, 0, -1, 3, 99, 0, 120, -120, 3, 4]
+    sorted_nums = [-120, -1, 0, 0, 1, 3, 3, 4, 99, 120]
+
+    self.assertEqual(quick_sort(nums), sorted_nums)
+    self.assertEqual(quick_sort([]), [])
+    self.assertEqual(quick_sort([0]), [0])
 
 
