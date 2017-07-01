@@ -3,8 +3,8 @@ from linked_list import LinkedList
 from stack import StackArray, StackLinkedList
 from queue import QueueArray, QueueLinkedList
 
-class Test(unittest.TestCase):
 
+class Test(unittest.TestCase):
 
   def test_linked_list(self):
     self.lnk_lst = LinkedList()
