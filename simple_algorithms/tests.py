@@ -1,6 +1,6 @@
 import unittest
 from recursion import fib_rec, fib_memo
-from misc import reverse, largest_number, check_cycle
+from misc import reverse, largest_number, check_cycle, bin_search
 from data_structures.node import Node
 from data_structures.linked_list import LinkedList
 
@@ -37,6 +37,11 @@ class Test(unittest.TestCase):
   def test_largest_number(self):
     self.assertEqual(largest_number([1, 34, 3, 98, 9, 76, 45, 4]), 998764543431)
     self.assertEqual(largest_number([54, 546, 548, 60]), 6054854654)
+
+  def test_bin_search(self):
+    self.assertEqual(bin_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7), 7)
+    self.assertEqual(bin_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 1), 1)
+    self.assertEqual(bin_search([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 12), -1)
 
   def test_cycle_list(self):
     # With cycle

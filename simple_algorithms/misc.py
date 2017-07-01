@@ -29,3 +29,24 @@ def check_cycle(head):
     tb = tb.next.next
 
   return False
+
+# Binary search
+
+def bin_search(nums, n, low=None, high=None):
+  # Find mid
+  if low is None:
+    low = 0
+  if high is None:
+    high = len(nums)
+  mid = low + (high - low) / 2
+  while low < high:
+    # If n is at mid, return mid
+    if nums[mid] == n:
+      return mid + 1
+    # If n < nums[mid], search in smaller half
+    elif n < nums[mid]:
+      return bin_search(nums, n, low, mid)
+    # If n > nums[mid], search in upper half
+    elif n > nums[mid]:
+      return bin_search(nums, n, mid + 1, high)
+  return -1
