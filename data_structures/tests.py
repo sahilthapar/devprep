@@ -78,3 +78,4 @@ class Test(unittest.TestCase):
     self.assertEqual(self.binary_tree.inorder(), [1, 3, 4, 8, 10, 12, 15, 19])
     self.assertEqual(self.binary_tree.preorder(), [10, 4, 1, 3, 8, 15, 12, 19])
     self.assertEqual(self.binary_tree.postorder(), [3, 1, 8, 4, 12, 19, 15, 10])
+    self.assertEqual(self.binary_tree.bfs(), [10, 4, 15, 1, 8, 12, 19, 3])

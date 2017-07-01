@@ -80,4 +80,22 @@ class BinaryTree():
     res += [node.value]
     return res
 
+  def bfs(self):
+    """
+    BFS traversal
+    :return: list BFS traversal values
+    """
+    if self.root is None:
+      return None
+    res = []
+    queue = [self.root]
+    while len(queue):
+      node = queue.pop(0)
+      if node.left is not None:
+        queue.append(node.left)
+      if node.right is not None:
+        queue.append(node.right)
+      res += [node.value]
+    return res
+
 
