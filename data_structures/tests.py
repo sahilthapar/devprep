@@ -2,6 +2,7 @@ import unittest
 from linked_list import LinkedList
 from stack import StackArray, StackLinkedList
 from queue import QueueArray, QueueLinkedList
+from binary_tree import BinaryTree
 
 
 class Test(unittest.TestCase):
@@ -57,10 +58,23 @@ class Test(unittest.TestCase):
     self.queue_list.enqueue(1)
     self.queue_list.enqueue(2)
     self.queue_list.enqueue(3)
-    print self.queue_list.toArray()
     self.queue_list.dequeue()
     self.queue_list.dequeue()
     self.queue_list.enqueue(2)
 
     self.assertEqual(self.queue_list.toArray(), [3, 2])
     self.assertEqual(self.queue_list.peek(), 3)
+
+  def test_binary_tree(self):
+    self.binary_tree = BinaryTree()
+    self.binary_tree.add(10)
+    self.binary_tree.add(4)
+    self.binary_tree.add(15)
+    self.binary_tree.add(1)
+    self.binary_tree.add(12)
+    self.binary_tree.add(19)
+    self.binary_tree.add(3)
+    self.binary_tree.add(8)
+    self.assertEqual(self.binary_tree.inorder(), [1, 3, 4, 8, 10, 12, 15, 19])
+    self.assertEqual(self.binary_tree.preorder(), [10, 4, 1, 3, 8, 15, 12, 19])
+    self.assertEqual(self.binary_tree.postorder(), [3, 1, 8, 4, 12, 19, 15, 10])
