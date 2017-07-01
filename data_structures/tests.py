@@ -24,5 +24,5 @@ class Test(unittest.TestCase):
     self.stack_array.pop()
     self.stack_array.push(2)
 
-    self.assertEqual(self.stack_array.toArray(), [1, 2])
+    self.assertEqual(self.stack_array.toArray(), [2, 1])
     self.assertEqual(self.stack_array.peek(), 2)

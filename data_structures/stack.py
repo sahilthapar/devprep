@@ -30,7 +30,15 @@ class StackArray():
     return None if self.isEmpty() else self.lst.pop()
 
   def isEmpty(self):
+    """
+    Checks if stack is empty
+    :return: bool
+    """
     return len(self.lst) == 0
 
   def toArray(self):
-    return self.lst
+    """
+    Helper function to convert stack to array
+    :return: 
+    """
+    return self.lst[::-1]

@@ -51,6 +51,10 @@ class LinkedList():
       current = current.next
 
   def toArray(self):
+    """
+    Helper function to convert linked list to array
+    :return: lst
+    """
     current = self.head
     lst = []
     while current is not None:
