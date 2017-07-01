@@ -131,8 +131,7 @@ class Solution(object):
     def toPrint(self, i):
         mul_3 = ((i % 3) == 0)
         mul_5 = ((i % 5) == 0)
-        mul_both = mul_3 and mul_5
-        if mul_both:
+        if mul_3 and mul_5:
             return "FizzBuzz"
         if mul_3:
             return "Fizz"
