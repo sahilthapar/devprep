@@ -50,6 +50,22 @@ class LinkedList():
         return
       current = current.next
 
+  def reverse(self):
+    """
+    Reverses the list in place
+    O(n), extra space O(1)
+    :return: 
+    """
+    prev = None
+    cur = self.head
+    while cur:
+      next = cur.next
+      cur.next = prev
+      prev = cur
+      cur = next
+    self.head = prev
+
+
   def toArray(self):
     """
     Helper function to convert linked list to array
