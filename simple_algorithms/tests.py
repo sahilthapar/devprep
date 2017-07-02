@@ -1,9 +1,11 @@
 import unittest
 from recursion import fib_rec, fib_memo
 from misc import reverse, largest_number, check_cycle, bin_search
+from misc import isUniqueChars
 from data_structures.node import Node
 from data_structures.linked_list import LinkedList
 from sorting import bubble_sort, merge_sort, quick_sort
+
 
 class Test(unittest.TestCase):
 
@@ -99,4 +101,8 @@ class Test(unittest.TestCase):
     self.assertEqual(quick_sort([]), [])
     self.assertEqual(quick_sort([0]), [0])
 
+  def test_is_unique_chars(self):
 
+    self.assertEqual(isUniqueChars('abcd'), True)
+    self.assertEqual(isUniqueChars('abcda'), False)
+    self.assertEqual(isUniqueChars('abcdA'), True)

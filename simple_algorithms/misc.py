@@ -50,3 +50,20 @@ def bin_search(nums, n, low=None, high=None):
     elif n > nums[mid]:
       return bin_search(nums, n, mid + 1, high)
   return -1
+
+
+def isUniqueChars(s):
+  """
+  Checks if all characters in a string are unique
+  Space complexity: Additional O(n)
+  Time complexity: O(n)
+  :param s: 
+  :return: 
+  """
+  char_set = set()
+  for c in s:
+    if c in char_set:
+      return False
+    char_set.add(c)
+  return True
+
